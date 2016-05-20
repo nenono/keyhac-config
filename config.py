@@ -130,20 +130,20 @@ def configure(keymap):
     side_of_alt_key = "L"
 
     # emacs日本語入力モードを使うかどうかを指定する（True: 使う、False: 使わない）
-    use_emacs_ime_mode = True
+    use_emacs_ime_mode = False
 
     # emacs日本語入力モードを切り替える（トグルする）キーを指定する
-    toggle_emacs_ime_mode_key = "C-t"
+    toggle_emacs_ime_mode_key = None
 
     # emacsシフトモードを使うかどうかを指定する（True: 使う、False: 使わない）
     use_emacs_shift_mode = False
 
     # IME を切り替えるキーを指定する（複数指定可）
     # toggle_input_method_key = ["C-Yen"]
-    toggle_input_method_key = ["C-Yen", "C-o"]
+    toggle_input_method_key = []
 
     # Escキーを Metaキーとして使うかどうかを指定する（True: 使う、False: 使わない）
-    use_esc_as_meta = True
+    use_esc_as_meta = False
 
     # Ctl-xプレフィックスキーに使うキーを指定する
     # （Ctl-xプレフィックスキーのモディファイアキーは、Ctrl または Alt のいずれかから指定してください）
@@ -163,7 +163,7 @@ def configure(keymap):
     lancherList_key = "A-l"
 
     # アクティブウィンドウを切り替えるキーの組み合わせ（前、後 の順）を指定する（複数指定可）
-    window_switching_key = [["A-p", "A-n"], ["A-Up", "A-Down"]]
+    window_switching_key = [["A-p", "A-n"]]
 
     # アクティブウィンドウをディスプレイ間で移動するキーの組み合わせ（前、後 の順）を指定する（複数指定可）
     # （other_window_key に割り当てている A-o との連係した利用を想定し、A-C-o を割り当てています。）
@@ -175,7 +175,7 @@ def configure(keymap):
 
     # 仮想デスクトップを切り替えるキーの組み合わせ（前、後 の順）を指定する（複数指定可）
     # desktop_switching_key = None # for Windows 7 or 8.1
-    desktop_switching_key = [["A-C-p", "A-C-n"], ["A-C-Left", "A-C-Right"]] # for Windows 10
+    desktop_switching_key = [["A-C-p", "A-C-n"]] # for Windows 10
 
     # shell_command 関数で起動するアプリケーションソフトを指定する
     # （パスが通っていない場所にあるコマンドは、絶対パスで指定してください。）
@@ -196,7 +196,7 @@ def configure(keymap):
                                        # "eclipse.exe",        # Eclipse
                                        # "firefox.exe",        # firefox
                                        "xyzzy.exe",          # xyzzy
-                                       "VirtualBox.exe",     # VirtualBox
+                                       #"VirtualBox.exe",     # VirtualBox
                                        "XWin.exe",           # Cygwin/X
                                        "Xming.exe",          # Xming
                                        "putty.exe",          # PuTTY
