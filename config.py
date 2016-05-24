@@ -168,7 +168,7 @@ def configure(keymap):
     # アクティブウィンドウをディスプレイ間で移動するキーの組み合わせ（前、後 の順）を指定する（複数指定可）
     # （other_window_key に割り当てている A-o との連係した利用を想定し、A-C-o を割り当てています。）
     # window_movement_key = None # Single display
-    window_movement_key = [[None, "A-C-o"], ["A-Left", "A-Right"]] # Multi-display
+    window_movement_key = [[None, "A-C-o"]] # Multi-display
 
     # ウィンドウを最小化、リストアするキーの組み合わせ（リストア、最小化 の順）を指定する（複数指定可）
     window_minimize_key = [["A-r", "A-m"]]
@@ -432,6 +432,10 @@ def configure(keymap):
                 keymap.InputKeyCommand("C-z")()
             else:
                 keymap.InputKeyCommand("C-y")()
+
+    def redo():
+        keymap_emacs.is_undo_mode = False
+        undo()
 
     def set_mark_command():
         if keymap_emacs.is_marked:
@@ -851,9 +855,9 @@ def configure(keymap):
 
     # C-Underscore を機能させるための設定
     if is_japanese_keyboard:
-        define_key(keymap_emacs, "C-S-BackSlash", reset_search(reset_undo(reset_counter(reset_mark(undo)))))
+        define_key(keymap_emacs, "C-S-BackSlash", reset_search(reset_undo(reset_counter(reset_mark(redo)))))
     else:
-        define_key(keymap_emacs, "C-S-Minus", reset_search(reset_undo(reset_counter(reset_mark(undo)))))
+        define_key(keymap_emacs, "C-S-Minus", reset_search(reset_undo(reset_counter(reset_mark(redo)))))
 
     if is_japanese_keyboard:
         # C-Atmark だとうまく動かない方が居るようなので C-(192) としている
