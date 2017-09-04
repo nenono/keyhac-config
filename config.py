@@ -858,6 +858,9 @@ def configure(keymap):
         define_key(keymap_emacs, "C-S-BackSlash", reset_search(reset_undo(reset_counter(reset_mark(redo)))))
     else:
         define_key(keymap_emacs, "C-S-Minus", reset_search(reset_undo(reset_counter(reset_mark(redo)))))
+    # M-/でredo
+    define_key(keymap_emacs, "M-Slash", reset_search(reset_undo(reset_counter(reset_mark(redo)))))
+
 
     if is_japanese_keyboard:
         # C-Atmark だとうまく動かない方が居るようなので C-(192) としている
